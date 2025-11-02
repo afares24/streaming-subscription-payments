@@ -1,6 +1,6 @@
 # Real-Time Payment Analytics Pipeline
 
-A production-grade streaming data pipeline that processes subscription payments in real-time, built entirely with Infrastructure as Code.
+A configurable streaming data pipeline that processes subscription payments in real-time, built entirely with AWS Kinesis, Spark, Iceberg, and Terraform.
 
 ## What It Does
 
@@ -23,12 +23,12 @@ Payment Events → Kinesis Stream → Glue Streaming Job → Iceberg Table → A
 
 ## Key Features
 
-✅ **Real-time processing** - Sub-minute end-to-end latency  
-✅ **Auto-scaling** - 1 to 15 Kinesis shards via config  
-✅ **ACID transactions** - Reliable writes with Iceberg  
-✅ **Deduplication** - Event-ID based idempotency  
-✅ **Compression** - ZSTD for 30% storage savings  
-✅ **IaC deployment** - Full Terraform automation  
+**Real-time processing** - Sub-minute end-to-end latency  
+**Auto-scaling** - 1 to 15 Kinesis shards via config  
+**ACID transactions** - Reliable writes with Iceberg  
+**Deduplication** - Event-ID based idempotency  
+**Compression** - ZSTD for 30% storage savings  
+**IaC deployment** - Full Terraform automation  
 
 ## Quick Start
 ```bash
@@ -146,15 +146,4 @@ terraform destroy -auto-approve
 
 All resources removed in ~2 minutes.
 
-## Skills Demonstrated
-
-- **Cloud Architecture** - Designed scalable AWS streaming pipeline
-- **Infrastructure as Code** - Terraform for reproducible deployments
-- **Stream Processing** - Real-time ETL with Spark on AWS Glue
-- **Data Engineering** - Iceberg lakehouse with ACID transactions
-- **Python Development** - Event producers and Spark transformations
-- **Cost Optimization** - Environment-based resource scaling
-
 ---
-
-**This project showcases production-grade data engineering practices: real-time processing, Infrastructure as Code, modern data lake formats, and cost-aware architecture.**
