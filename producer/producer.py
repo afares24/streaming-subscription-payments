@@ -128,10 +128,7 @@ def run_producer(duration_seconds: int, events_per_second: int):
                 batches = [[generate_payment() for _ in range(BATCH_SIZE)] 
                           for _ in range(batches_per_second)]
                 
-                # Send batches in parallel
                 futures = [executor.submit(send_batch_to_kinesis, batch) for batch in batches]
-                
-                # Collect results
                 for future in as_completed(futures):
                     sent, failed = future.result()
                     stats["sent"] += sent

@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "project_name" {
   description = "Project name for resource naming"
   type        = string
-  default     = "netflix_revenue"  # Changed from netflix-revenue
+  default     = "netflix_revenue"
 }
 
 variable "environment" {
