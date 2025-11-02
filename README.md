@@ -26,8 +26,8 @@ Payment Events → Kinesis Stream → Glue Streaming Job → Iceberg Table → A
 **Real-time processing** - Sub-minute end-to-end latency  
 **Auto-scaling** - 1 to 15 Kinesis shards via config  
 **ACID transactions** - Reliable writes with Iceberg  
-**Idempotent processing** - Prevents duplicate records 
-**Compression** - ZSTD for 30% storage savings and fast decompresion
+**Idempotent processing** - Prevents duplicate records  
+**Compression** - ZSTD for 30% storage savings and fast decompresion  
 **IaC deployment** - Full Terraform automation  
 
 ## Quick Start
