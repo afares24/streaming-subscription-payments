@@ -26,8 +26,8 @@ Payment Events → Kinesis Stream → Glue Streaming Job → Iceberg Table → A
 **Real-time processing** - Sub-minute end-to-end latency  
 **Auto-scaling** - 1 to 15 Kinesis shards via config  
 **ACID transactions** - Reliable writes with Iceberg  
-**Deduplication** - Event-ID based idempotency  
-**Compression** - ZSTD for 30% storage savings  
+**Idempotent processing** - Prevents duplicate records 
+**Compression** - ZSTD for 30% storage savings and fast decompresion
 **IaC deployment** - Full Terraform automation  
 
 ## Quick Start
@@ -74,7 +74,6 @@ GROUP BY subscription_tier;
 ### Scalable Architecture
 - **Dev mode:** 1 shard, ~$15/month
 - **Demo mode:** 15 shards, ~$165/month
-- Terraform makes switching trivial
 
 ## Sample Event
 ```json
@@ -129,14 +128,13 @@ GROUP BY subscription_tier;
 - IAM least-privilege permissions
 - Configurable retention policies
 
-## Scale Testing
+## Stream Scale Testing
 
 | Configuration | Shards | Events/sec | Cost/Month |
 |--------------|--------|------------|------------|
 | Development  | 1      | ~1,000     | ~$15       |
 | Demo         | 15     | ~15,000    | ~$165      |
 
-Demonstrated successful ingestion of 60,000+ events with zero data loss.
 
 ## Clean Up
 ```bash
